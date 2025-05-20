@@ -25,14 +25,14 @@ jobs:
           echo "DB_USER=root" >> .env
           echo "DB_PASSWORD=root" >> .env
 
+      - name: Create lib directory
+        run: mkdir -p lib
+
       - name: Download MySQL Connector
-        run: |
-          mkdir -p lib
-          wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.29/mysql-connector-java-8.0.29.jar -O lib/mysql-connector-java-8.0.29.jar
+        run: wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.29/mysql-connector-java-8.0.29.jar -O lib/mysql-connector-java-8.0.29.jar
 
       - name: Download Dotenv Java
-        run: |
-          wget https://github.com/cdimascio/dotenv-java/releases/download/2.3.2/dotenv-java-2.3.2.jar -O lib/dotenv-java-2.3.2.jar
+        run: wget https://repo1.maven.org/maven2/io/github/cdimascio/dotenv-java/2.3.2/dotenv-java-2.3.2.jar -O lib/dotenv-java-2.3.2.jar
 
       - name: Compile
         run: |
