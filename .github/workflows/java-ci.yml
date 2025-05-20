@@ -19,6 +19,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Create .env file
+        run: |
+          echo "DB_URL=jdbc:mysql://localhost:3306/GuessingGameDB" > .env
+          echo "DB_USER=root" >> .env
+          echo "DB_PASSWORD=root" >> .env
+
       - name: Download MySQL Connector
         run: |
           mkdir -p lib
